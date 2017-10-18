@@ -1,3 +1,5 @@
+
+// SZ missed access modifiers for properties in all classes
 abstract class Disposable{
     state: string;
     public dispose(): boolean{
@@ -10,12 +12,14 @@ abstract class Disposable{
 abstract class Deletable{
     state: string;
     public delete(): boolean{
+        // SZ please use curly breakets even for single row expressions
         if (this.canBeChanged) this.state = 'deleted';
         return this.canBeChanged
     }
     public abstract get canBeChanged():boolean;
 }
 
+// SZ all other classes are abstract - NOT for rework
 class Readable{
     isReadonly: boolean;
     get readonly(): boolean{

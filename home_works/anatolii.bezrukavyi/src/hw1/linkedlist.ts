@@ -1,3 +1,6 @@
+// SZ Implementation is good in general
+
+// SZ each class interface or enum should be in separate file
 interface IList<T> {
     push(item: T): void;
     getAllItems():Array<T>;
@@ -33,6 +36,7 @@ export class LinkedList<T> implements IList<T>{
     private head: ListNode<T>;
     private tale: ListNode<T>;
     
+    // SZ missed access modifiers
     push(item:T): void {
         let nodeToAdd = ListNode.create<T>(item, this.tale);
         this.head = this.head || nodeToAdd;
