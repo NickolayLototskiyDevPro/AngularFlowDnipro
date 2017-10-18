@@ -1,14 +1,14 @@
 const getPromise: (delay: number) => Promise<void> = (delay) => {
     return new Promise<void>((resolve, reject) => {
-        setTimeout(() => { resolve() }, delay);
+        setTimeout((): void => { resolve() }, delay);
     });
 }
 
-function run(t1: number, t2: number, t3: number) {
+function run(t1: number, t2: number, t3: number): void {
     new Promise<void>((resolve, reject) => {
         let done = false;
-        const onFirstComplete = () => { console.log('Done!'); };
-        const onAllComplete = () => {
+        const onFirstComplete = (): void => { console.log('Done!'); };
+        const onAllComplete = (): void => {
             if (!done) {
                 done = true;
             } else {

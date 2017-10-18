@@ -1,8 +1,8 @@
 class LinkedListNode<T>{
 
-    prev: LinkedListNode<T>;
-    next: LinkedListNode<T>;
-    value: T;
+    public prev: LinkedListNode<T>;
+    public next: LinkedListNode<T>;
+    public value: T;
 
     constructor(value: T)
     constructor(value: T, prev: LinkedListNode<T>, next: LinkedListNode<T>)
@@ -37,7 +37,7 @@ class LinkedList<T> {
         return this._tail;
     }
 
-    find(value: T): LinkedListNode<T> {
+    private find(value: T): LinkedListNode<T> {
         let curr: LinkedListNode<T> = this._root;
         while (curr) {
             if (curr.value === value) {
@@ -48,7 +48,7 @@ class LinkedList<T> {
         return curr;
     }
 
-    remove(value: T): boolean {
+    public remove(value: T): boolean {
         const node: LinkedListNode<T> = this.find(value);
         if (node) {
             const next = node.next;
@@ -68,7 +68,7 @@ class LinkedList<T> {
         }
     }
 
-    removeFirst(): void {
+    public removeFirst(): void {
         if(this._root){
             if(this._root === this._tail){
                 this._root = this._tail = null;
@@ -79,7 +79,7 @@ class LinkedList<T> {
         }
     }
 
-    removeLast(): void {
+    public removeLast(): void {
         if(this._tail){
             if(this._tail === this._root){
                 this._root = this._tail = null;
@@ -90,7 +90,7 @@ class LinkedList<T> {
         }
     }
 
-    insertAfter(prevValue: T, value: T): LinkedListNode<T> {
+    public insertAfter(prevValue: T, value: T): LinkedListNode<T> {
         const node: LinkedListNode<T> = this.find(prevValue);
         let inserted: LinkedListNode<T> = null;
         if (node) {
@@ -106,7 +106,7 @@ class LinkedList<T> {
         return inserted;
     }
 
-    insertBefore(nextVal: T, value: T): LinkedListNode<T> {
+    public insertBefore(nextVal: T, value: T): LinkedListNode<T> {
         const node: LinkedListNode<T> = this.find(nextVal);
         let inserted: LinkedListNode<T> = null;
         if (node) {
@@ -122,7 +122,7 @@ class LinkedList<T> {
         return inserted;
     }
 
-    insertFirst(value: T) {
+    public insertFirst(value: T) {
         const ins = new LinkedListNode<T>(value, null, this._root);
         if (this._root) {
             this._root.prev = ins;
@@ -133,7 +133,7 @@ class LinkedList<T> {
         }
     }
 
-    insertLast(value: T) {
+    public insertLast(value: T) {
         const ins = new LinkedListNode<T>(value, this._tail, null);
         if (this._tail) {
             this._tail.next = ins;
@@ -144,7 +144,7 @@ class LinkedList<T> {
         }
     }
 
-    map(callback: (value: T, node?: LinkedListNode<T>) => void) {
+    public map(callback: (value: T, node?: LinkedListNode<T>) => void) {
         let curr: LinkedListNode<T> = this._root;
         while (curr) {
             callback(curr.value, curr);
@@ -152,19 +152,19 @@ class LinkedList<T> {
         }
     }
 
-    length(): number {
+    public length(): number {
         let counter = 0;
         this.map(() => counter++);
         return counter;
     }
 
-    toArray(): Array<T> {
+    public toArray(): Array<T> {
         let arr: Array<T> = [];
         this.map(v => arr.push(v));
         return arr;
     }
 
-    toString(): string {
+    public toString(): string {
         let res = '[';
         this.map((val, node) => {
             res = res.concat(val.toString() + (node.next ? ',' : ''));
