@@ -21,7 +21,7 @@ class DateFormatter {
         if (typeof month === 'number') {
             res = new Date(year, month - 1, day);
         } else {
-            const dateString = month + ' ' + day + ',' + year;
+            const dateString: string = `${month} ${day}, ${year}`;
             res = new Date(dateString);
         }
         return res;

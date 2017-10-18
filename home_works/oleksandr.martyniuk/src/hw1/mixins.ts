@@ -1,22 +1,22 @@
 class Disposable {
-    value: string;
+    public value: string;
 
-    dispose(): void {
+    public dispose(): void {
         this.value = '';
     }
 }
 
 class Deletable {
-    value: string;
+    public value: string;
 
-    delete(): void {
+    public delete(): void {
         this.value = 'deleted';
     }
 }
 
 class Readable {
 
-    static init(inst: Readable, id: string){
+    public static init(inst: Readable, id: string){
         Object.defineProperty(inst, 'id', {
             value: id,
             writable: false,
@@ -24,7 +24,7 @@ class Readable {
         });
     }
 
-    id: string;
+    public id: string;
 }
 
 class Mixer implements Disposable, Deletable, Readable {
@@ -34,18 +34,18 @@ class Mixer implements Disposable, Deletable, Readable {
         Readable.init(this, id); // sorry, had no better idea of how to do this
     }
 
-    value: string = 'ok';
+    public value: string = 'ok';
 
     // Readable
-    id: string;
+    public id: string;
 
     // Disposable
-    dispose: () => void;
+    public dispose: () => void;
 
     //Deletable
-    delete: () => void;
+    public delete: () => void;
 
-    toString(): string {
+    public toString(): string {
         return JSON.stringify(this);
     }
 }
@@ -61,12 +61,12 @@ function applyMixins(derivedCtor: any, baseCtors: any[]) {
 }
 
 var smm = new Mixer('3');
-console.log('Created: ' + smm);
+console.log(`Created: ${smm}`);
 smm.delete();
-console.log('Deleted: ' + smm);
+console.log(`Deleted: ${smm}`);
 smm.dispose();
-console.log('Disposed: ' + smm);
+console.log(`Disposed: ${smm}`);
 smm = new Mixer('4');
-console.log('Created with id: ' + smm);
+console.log(`Created: ${smm}`);
 smm.id = '2';
-console.log('After trying to reassign id: ' + smm);
+console.log(`After trying to reassign id: ${smm}`);
