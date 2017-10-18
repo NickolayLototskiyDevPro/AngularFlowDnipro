@@ -12,6 +12,7 @@ function stringConverter<T> (data: T): string {
 function convertObjectToString<T> (data: T): string {
     let concatedString: string = '';
 
+    // SZ please use Object.keys and forof or .forEach for object iteration
     for (let key in data) {
         concatedString += `${key}: ${data[key]}; `
     }

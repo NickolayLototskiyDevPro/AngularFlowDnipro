@@ -1,4 +1,7 @@
 // Implementation of 5th homework task
+
+// SZ each class, interface or enum should be in separeate file
+// SZ missed access modifiers, each method or property in class should has it
 class Disposable{
     smartText: string;
     dispose () {
@@ -62,6 +65,8 @@ function applyMixins(derivedCtor: any, baseCtors: any[]){
     });
 }
 
+
+// SZ please use const instead of var
 var txtObj = new textObject('some text');
 txtObj.readText();
 txtObj.dispose();

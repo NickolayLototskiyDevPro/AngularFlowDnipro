@@ -5,6 +5,7 @@
 const delay = (ms:number) => new Promise(resolve => setTimeout(resolve, ms));
 const delay500withReport = async (jobId: string) => {
     console.time(jobId);
+    // SZ Did you forget add $ before {jobId}?
     console.log(`{jobId} job started. Timestamp: {Performance.now()}`);
     await delay(500);
     console.log(`{jobId} job finished. Timestamp: {Performance.now()}`);
