@@ -18,6 +18,6 @@ export async function runAll() {
         await run3();
     }
     await Promise.all([ job1and3cascade, run2 ]);
-    //console.log('DONE!');
+    console.log('DONE!');
     console.timeEnd('runAll execution time');
 }
