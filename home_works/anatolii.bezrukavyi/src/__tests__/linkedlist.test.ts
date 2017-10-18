@@ -1,4 +1,4 @@
-import { LinkedList } from '../hw1/linkedlist';
+import { LinkedList } from '../hw1/linkedlist/linkedlist';
 
 it('creates LinkedList, adds 1,2,3 reads', () => {
     let target = new LinkedList<number>();
