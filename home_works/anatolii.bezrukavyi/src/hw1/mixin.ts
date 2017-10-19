@@ -1,3 +1,6 @@
+
+// SZ missed access modifiers for properties in all classes
+// Response: was not overcome it due to bug in TypeScript https://github.com/Microsoft/TypeScript/issues/3854
 abstract class Disposable{
     state: string;
     public dispose(): boolean{
@@ -10,12 +13,13 @@ abstract class Disposable{
 abstract class Deletable{
     state: string;
     public delete(): boolean{
-        if (this.canBeChanged) this.state = 'deleted';
+        if (this.canBeChanged) { this.state = 'deleted'; }
         return this.canBeChanged
     }
     public abstract get canBeChanged():boolean;
 }
 
+// SZ all other classes are abstract - NOT for rework
 class Readable{
     isReadonly: boolean;
     get readonly(): boolean{
