@@ -24,6 +24,7 @@ export class ShowTimeComponent implements OnInit, OnChanges {
   public displayValue;
   
 
+  // SZ missed access modifiers
   @Output()
   onTimeRemembered: EventEmitter<Date> = new EventEmitter();
 
