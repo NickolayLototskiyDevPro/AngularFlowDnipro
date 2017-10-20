@@ -1,3 +1,6 @@
+// SZ each class interface or enum should has own file
+// SZ same for mixins homework
+
 class LinkedListNode<T>{
 
     public prev: LinkedListNode<T>;

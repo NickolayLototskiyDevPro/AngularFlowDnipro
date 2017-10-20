@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-component',
+  // SZ you have app.component.html, but your markup is laying in this file
+  // SZ it is confusing
   template: `
     <app-clock [savedTime]="savedTime" (getTime)="getCurrentTime($event)"></app-clock>
     <app-timecapsule [currentTime]="currentTime" (showTime)="showSavedTime($event)" (saveTime)="saveTime($event)"></app-timecapsule>

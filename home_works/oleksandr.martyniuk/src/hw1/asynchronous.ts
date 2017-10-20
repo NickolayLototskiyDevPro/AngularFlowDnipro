@@ -5,6 +5,8 @@ const getPromise: (delay: number) => Promise<void> = (delay) => {
 }
 
 function run(t1: number, t2: number, t3: number): void {
+    
+    // SZ missed type for arrow function
     new Promise<void>((resolve, reject) => {
         let done = false;
         const onFirstComplete = (): void => { console.log('Done!'); };
@@ -15,6 +17,8 @@ function run(t1: number, t2: number, t3: number): void {
                 console.log('DONE!');
             }
         };
+
+        // SZ missed return type for arrow functions
         getPromise(t1).then(() => getPromise(t2))
             .then(() => {
                 onFirstComplete();

@@ -41,10 +41,12 @@ export class ClockContainerComponent implements OnInit {
   }
 
   private startTimer(): void {
+    // SZ please clean up interval in on destroy method
      setInterval(() => this.time = new Date(), 300);
 
   }
 
+  // SZ missed access modifier
   onRememberTime(event: Date) {
     this.rememberedTime = event;
     this.rememberTime.emit(event);

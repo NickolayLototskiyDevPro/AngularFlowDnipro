@@ -21,12 +21,14 @@ export class TimeCapsuleComponent implements OnInit {
   @Input() public  currentTime: Date;
   @Output() public restoreTime: EventEmitter<Date> = new EventEmitter<Date>();
 
+  // SZ please don't leave empty methods
   constructor() {
   }
 
   ngOnInit() {
   }
 
+  // SZ missed acces modifier, please setup tslint
   restoreHandler() {
     this.restoreTime.emit(this.currentTime);
   }
