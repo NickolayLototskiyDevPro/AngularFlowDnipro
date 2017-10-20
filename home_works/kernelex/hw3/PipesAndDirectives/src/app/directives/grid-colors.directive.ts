@@ -14,7 +14,6 @@ export class GridColorsDirective implements OnInit {
 
   constructor(private el: ElementRef) {
     this.element = el.nativeElement;
-
   }
 
   ngOnInit(): void {

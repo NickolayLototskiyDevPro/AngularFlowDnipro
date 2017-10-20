@@ -9,6 +9,7 @@ import { ColoredGridComponent } from './colored-grid/colored-grid.component';
 import { ItemHighlightDirective } from './directives/item-highlight.directive';
 import { GridColorsDirective } from './directives/grid-colors.directive';
 import {SimpleGridComponent} from "./simple-grid/simple-grid.component";
+import { AsRadioButtonDirective } from './directives/as-radio-button.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {SimpleGridComponent} from "./simple-grid/simple-grid.component";
     ColoredGridComponent,
     ItemHighlightDirective,
     GridColorsDirective,
-    SimpleGridComponent
+    SimpleGridComponent,
+    AsRadioButtonDirective
   ],
   imports: [
     BrowserModule,
