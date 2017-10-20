@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, OnChanges } 
 
 @Component({
     selector: 'app-timecapsule',
+    // SZ saveTime is not a function, did you mean savedTime?
     template: `
         <button (click)="saveTime()">Save Time</button>
         <button (click)="showSavedTime()">Show Time</button>
