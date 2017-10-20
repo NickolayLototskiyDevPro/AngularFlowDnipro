@@ -11,6 +11,7 @@ class DateFormatter {
             return DateFormatter.formatSingle(arg1, month, year);
         } else {
             const arr: Date[] = [];
+            // SZ why do you push in map callback, map already returns changed array, use it.
             arg1.map(v => arr.push(DateFormatter.formatSingle(v[0], v[1], v[2])));
             return arr;
         }
