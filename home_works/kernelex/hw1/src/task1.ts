@@ -1,12 +1,17 @@
 //- Create override method that can retrieve day, month(as number as text format) and year and return Date object
 //Override this method for retrieve array of such parameters and retrieve array with dates.
 
+// SZ please use your first name and second name to form 
+// SZ name of your directory for homeworks
+// SZ for example home_works/sergey.zotenko/hw1
+
 type MyDate = [number, string | number, number];
 
 function createDate(day: number, month: string | number, year: number): Date;
 function createDate(array: Array<MyDate>): Array<Date> ;
 
 function createDate(day: number | Array<MyDate>, month?: string | number, year?: number): Date | Array<Date> {
+    // SZ please use single quote for string definition - NOT for rework.
     if (typeof day === "number") {
         if (typeof month === "string") {
             return new Date(Date.parse(`${month} ${day}, ${year}`));
