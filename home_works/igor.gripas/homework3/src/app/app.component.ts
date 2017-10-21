@@ -35,8 +35,10 @@ import { Component } from '@angular/core';
         <td>43</td>
         <td>44</td>
       </tr>
-
     </table>
+    <div switchOnOff>
+    
+    </div>
   `
 })
 export class AppComponent {

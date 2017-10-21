@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MorsePipe } from './morse.pipe';
 import { FilterNumbersPipe } from './filterNumbers.pipe';
 import { TableColor } from './tableColor.directive';
+import { SwitchOnOff } from './switchOnOff.directive';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { TableColor } from './tableColor.directive';
     AppComponent,
     MorsePipe,
     FilterNumbersPipe,
-    TableColor
+    TableColor,
+    SwitchOnOff
   ],
   imports: [
     BrowserModule,
