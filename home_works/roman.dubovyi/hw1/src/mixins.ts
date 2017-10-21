@@ -1,6 +1,9 @@
+// SZ each class interface or enum should has separate file
+
 class Deletable {
     public text: string;
 
+    // SZ missed access modifiers for methods
     delete(): void {
         this.text = 'deleted';
     }
@@ -52,6 +55,8 @@ function applyMixins(derivedCtor: any, baseCtors: any[]) {
     });
 }
 
+// SZ please use const or let instead
+// SZ missed type
 var mix = new Mixable();
 
 mix.value = 'mixable';

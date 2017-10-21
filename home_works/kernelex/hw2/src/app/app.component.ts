@@ -2,6 +2,9 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
+  // SZ template of this component is too big
+  // SZ please use separate html file for this purpose
+  // SZ html file gives us a lot advantages, syntax highlight for example
   template: `
     <div>
       <h1>
@@ -25,6 +28,7 @@ export class AppComponent {
 
   public restoreTimeHandler(event: Date) {
     this.tempTime = event;
+    // SZ each interval and even timeout should be cleand up in onDestroy method
     setTimeout(() => {
         this.tempTime = null;
       }, 3000

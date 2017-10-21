@@ -14,6 +14,9 @@ export class ShowTimeComponent {
   @Output()
   public rememberTime: EventEmitter<void> = new EventEmitter<void>();
 
+  // SZ missed access modifier
+  // SZ please install tslint and setup member-access rule
+  // SZ in general your homework looks good
   rememberTimeEmit(): void {
       this.rememberTime.emit();
   }

@@ -24,3 +24,9 @@
 - Implements pipe for filtering numbers. If you path true(default) pass even numbers from array only. If you path false odd.
 - Colored table directive (1st - th(odd color), 2nd - th(even color), 3rd - tr(odd color), 4th - tr(even color))
 - Implement switch off/on button directive for checkbox container
+
+## Homework 4 ##
+- Create service for time count.
+- Create service for time capsule.
+- Inject service with DI.
+- Use modules architecture.
