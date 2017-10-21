@@ -1,17 +1,23 @@
+
 class LinkedList<T> {
-    public element:ListElement<T>;
+    public _element:ListElement<T> = null;
 
     public add(value:T):void {
-        if (null === this.element) {
-            this.element = new ListElement(value);
-            this.element.prev = this.element;
-            this.element.next = this.element;
+        if (null === this._element) {
+            this._element = new ListElement(value);
+            this._element.prev = this._element;
+            this._element.next = this._element;
         } else {
             const newElement = new ListElement(value);
-            newElement.prev = this.element;
-            newElement.next = this.element.next;
-            this.element = newElement;
+            newElement.prev = this._element;
+            newElement.next = this._element.next;
+            newElement.next.prev = newElement;
+            this._element = newElement;
         }
+    }
+
+    public get current():ListElement<T> {
+        return this._element;
     }
 }
 
@@ -30,7 +36,16 @@ list.add('first');
 list.add('second');
 list.add('third');
 
-console.log('current', list.element.value);
-console.log('prev', list.element.prev.value);
-console.log('prev prev', list.element.prev.prev.value);
-console.log('next', list.element.next.value);
+console.log('current', list.current.value);
+console.log('prev', list.current.prev.value);
+console.log('prev prev', list.current.prev.prev.value);
+console.log('next', list.current.next.value);
+
+const list2 = new LinkedList();
+list2.add(15);
+list2.add(20);
+
+console.log('current', list2.current.value);
+console.log('prev', list2.current.prev.value);
+console.log('prev prev', list2.current.prev.prev.value);
+console.log('next', list2.current.next.value);
