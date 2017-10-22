@@ -1,14 +1,5 @@
 
 function getString<T>(val:T):string {
-    if (!val) {
-        return '';
-    }
-    if (typeof val === 'object') {
-        return JSON.stringify(val);
-    }
-    if (val.toString) {
-        return val.toString();
-    }
     return JSON.stringify(val);
 }
 
