@@ -37,7 +37,11 @@ import { Component } from '@angular/core';
       </tr>
     </table>
     <div switchOnOff>
-    
+      checkbox1<input type="checkbox" />
+      checkbox2<input type="checkbox" />
+      checkbox3<input type="checkbox" />
+      checkbox4<input type="checkbox" />
+      checkbox5<input type="checkbox"/>
     </div>
   `
 })
