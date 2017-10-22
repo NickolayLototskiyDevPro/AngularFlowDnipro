@@ -10,9 +10,9 @@ class DateFormatter {
         if(typeof arg1 === 'number'){
             return DateFormatter.formatSingle(arg1, month, year);
         } else {
-            const arr: Date[] = [];
-            // SZ why do you push in map callback, map already returns changed array, use it.
-            arg1.map(v => arr.push(DateFormatter.formatSingle(v[0], v[1], v[2])));
+             // SZ why do you push in map callback, map already returns changed array, use it.
+             // thanks ;) fixed
+            const arr: Date[] = arg1.map((v: dateTuple): Date => DateFormatter.formatSingle(v[0], v[1], v[2]));
             return arr;
         }
     }

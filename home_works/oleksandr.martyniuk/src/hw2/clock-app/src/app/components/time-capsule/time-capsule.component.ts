@@ -29,11 +29,11 @@ export class TimeCapsuleComponent implements OnInit, OnChanges {
   }
 
   // SZ missed access modifier
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.displayedValue = 'N/A';
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  public ngOnChanges(changes: SimpleChanges): void {
     if (changes.remembered.currentValue) {
       this.displayedValue = changes.remembered.currentValue.toTimeString();
     }
