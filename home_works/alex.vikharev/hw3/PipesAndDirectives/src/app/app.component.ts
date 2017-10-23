@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
+  // SZ please move template to separate file
   template: `
     <h1>
       Welcome to {{title}}!

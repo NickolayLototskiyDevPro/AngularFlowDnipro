@@ -11,6 +11,8 @@ import {Pipe, PipeTransform} from '@angular/core';
  */
 export class EvenPipe implements PipeTransform {
 
+  // you transform your array to string, so return type of function will be a string
+  // SZ please use :string instead of :any
   transform(value: Array<number>, even: boolean = true): any {
     if (!value) {
       return value;

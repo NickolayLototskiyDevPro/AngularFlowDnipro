@@ -4,6 +4,7 @@ import {Directive, ElementRef, HostListener, Input, OnInit} from '@angular/core'
   selector: '[gridColors]'
 })
 export class GridColorsDirective implements OnInit {
+  // SZ missed access modifier
   @Input() thOddColor: string;
   @Input() thEvenColor: string;
   @Input() trOddColor: string;
@@ -16,12 +17,15 @@ export class GridColorsDirective implements OnInit {
     this.element = el.nativeElement;
   }
 
+  // SZ missed access modifier
   ngOnInit(): void {
     this.highlightRows();
     this.highlightHeders();
   }
 
+  // SZ missed return type
   private highlightRows() {
+    // SZ missed type of variable
     let rows = this.element.getElementsByTagName('tr');
     console.log('rows.length', rows.length);
     console.log('rows', rows);
@@ -34,6 +38,7 @@ export class GridColorsDirective implements OnInit {
     }
   }
 
+  // SZ missed return type
   private highlightHeders() {
     let ths = this.element.getElementsByTagName('th');
     console.log('rows.length', ths.length);

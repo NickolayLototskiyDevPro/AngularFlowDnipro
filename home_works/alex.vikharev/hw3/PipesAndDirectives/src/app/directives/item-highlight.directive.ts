@@ -1,5 +1,8 @@
 import {Directive, ElementRef, HostListener, Input} from '@angular/core';
 
+// SZ please check access modifiers and retrun type of methods
+// SZ please setup tslint it is very useful
+
 @Directive({
   selector: '[itemHighlight]'
 })

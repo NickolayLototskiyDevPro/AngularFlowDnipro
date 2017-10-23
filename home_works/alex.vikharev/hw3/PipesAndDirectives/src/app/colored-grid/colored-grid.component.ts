@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-colored-grid',
+  // SZ please use separate file for templates
   template: `
     <table itemHighlight="lightblue">
       <thead>
@@ -17,6 +18,7 @@ import {Component, OnInit} from '@angular/core';
       </tbody>
     </table>
   `,
+  // SZ please use separate or main file for styles
   styles: [`
     table, th, td {
       padding: 5px;
@@ -39,6 +41,7 @@ import {Component, OnInit} from '@angular/core';
   `]
 })
 export class ColoredGridComponent implements OnInit {
+  // SZ missed type of variables, please setup tslint
   public headers = ['name', 'age', 'test', 'gender'];
   public item = ['name', '32', 'ok'];
   public items = [
@@ -47,6 +50,7 @@ export class ColoredGridComponent implements OnInit {
     ["Ted", '22', '321', 'f']
   ];
 
+  // SZ please do not leave empty methods 
   constructor() {
   }
 
