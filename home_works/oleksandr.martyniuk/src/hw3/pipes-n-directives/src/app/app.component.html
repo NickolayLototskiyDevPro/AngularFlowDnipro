@@ -1,0 +1,96 @@
+<input type="text" [(ngModel)]="inputValue" />
+<br/>
+<h4> Morse: {{inputValue | morse}}</h4>
+<hr/>
+<h4> Even: {{sourceArray | even}}</h4>
+<h4> Odd: {{sourceArray | even:false}}</h4>
+<hr/>
+<h4>Mnogo interactive`a</h4>
+<span>th color odd</span>
+<input type="text" [(ngModel)]="thColorOdd" />
+<br/>
+<span>th color even</span>
+<input type="text" [(ngModel)]="thColorEven" />
+<br/>
+<span>tr color odd</span>
+<input type="text" [(ngModel)]="trColorOdd" />
+<br/>
+<span>tr color even</span>
+<input type="text" [(ngModel)]="trColorEven" />
+<br/>
+<table appColoredTable thColorOdd="{{thColorOdd}}" thColorEven="{{thColorEven}}" trColorOdd="{{trColorOdd}}" trColorEven="{{trColorEven}}">
+  <thead>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hello</td>
+      <td>World</td>
+      <td>Hello</td>
+      <td>World</td>
+      <td>Hello</td>
+    </tr>
+    <tr>
+      <td>World</td>
+      <td>Hello</td>
+      <td>World</td>
+      <td>Hello</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td>Hello</td>
+      <td>World</td>
+      <td>Hello</td>
+      <td>World</td>
+      <td>Hello</td>
+    </tr>
+
+  </tbody>
+</table>
+<table appColoredTable thColorOdd="{{thColorEven}}" thColorEven="{{thColorOdd}}" trColorOdd="{{trColorEven}}" trColorEven="{{trColorOdd}}">
+  <thead>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+  </thead>
+  <tbody>
+      <tr>
+        <td>Hello</td>
+        <td>World</td>
+        <td>Hello</td>
+        <td>World</td>
+        <td>Hello</td>
+      </tr>
+      <tr>
+        <td>World</td>
+        <td>Hello</td>
+        <td>World</td>
+        <td>Hello</td>
+        <td>World</td>
+      </tr>
+      <tr>
+        <td>Hello</td>
+        <td>World</td>
+        <td>Hello</td>
+        <td>World</td>
+        <td>Hello</td>
+      </tr>
+  
+    </tbody>
+</table>
+<hr/>
+<div appCustomRadiobutton [rbValues]="radioValues" selectedValue="Check3" (selectionChanged)="onRadioSelectionChanged1($event)">
+</div>
+<h4>Selected value: {{selectedRadio1}}</h4>
+<br/>
+<input type="text" [(ngModel)]="selectedRadioInput" /> <i>Type to match item</i>
+<br/>
+<div appCustomRadiobutton [rbValues]="radioValues" [(selectedValue)]="selectedRadioInput" (selectionChanged)="onRadioSelectionChanged2($event)">
+</div>
+<h4>Selected value: {{selectedRadio2}}</h4>
