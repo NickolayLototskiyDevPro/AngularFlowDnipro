@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, OnChanges } 
 @Component({
     // SZ this component has selector app-clock
     // SZ but file has name clock.container.component, it is confusing
-    // SZ clock.container.component.ts or app-clock.container.component.ts will be a better name
+    // SZ clock.component.ts or app-clock.component.ts will be a better name
     selector: 'app-clock',
     template: `
         <app-showtime [time]="time"></app-showtime>
