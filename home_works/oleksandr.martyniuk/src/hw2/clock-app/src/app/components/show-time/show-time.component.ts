@@ -12,26 +12,24 @@ import { Component, OnInit, Input, Output, OnChanges, SimpleChanges, EventEmitte
   ]
 })
 export class ShowTimeComponent implements OnInit, OnChanges {
-
   constructor() { }
 
   @Input()
   public currTime: Date;
-
   @Input()
   public isFrozen = false;
 
   public displayValue;
-  
 
-  // SZ missed access modifiers
+
+  // SZ missed access modifiers +
   @Output()
-  onTimeRemembered: EventEmitter<Date> = new EventEmitter();
+  public onTimeRemembered: EventEmitter<Date> = new EventEmitter();
 
   ngOnInit() {
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  public ngOnChanges(changes: SimpleChanges) {
     if (changes.currTime && changes.currTime.currentValue) {
       this.displayValue = changes.currTime.currentValue.toTimeString();
     }
