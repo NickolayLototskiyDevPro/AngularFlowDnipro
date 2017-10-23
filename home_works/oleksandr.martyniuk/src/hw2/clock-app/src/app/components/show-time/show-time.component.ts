@@ -11,7 +11,8 @@ import { Component, OnInit, Input, Output, OnChanges, SimpleChanges, EventEmitte
     '.frozen { color: #ff7070}'
   ]
 })
-export class ShowTimeComponent implements OnChanges {
+export class ShowTimeComponent implements OnInit, OnChanges {
+  constructor() { }
 
   @Input()
   public currTime: Date;
@@ -20,10 +21,13 @@ export class ShowTimeComponent implements OnChanges {
 
   public displayValue;
 
-  // SZ missed access modifiers
-  // fixed
+
+  // SZ missed access modifiers +
   @Output()
   public onTimeRemembered: EventEmitter<Date> = new EventEmitter();
+
+  ngOnInit() {
+  }
 
   public ngOnChanges(changes: SimpleChanges) {
     if (changes.currTime && changes.currTime.currentValue) {

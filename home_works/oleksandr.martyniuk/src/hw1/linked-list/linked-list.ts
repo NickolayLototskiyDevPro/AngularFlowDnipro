@@ -1,26 +1,8 @@
-// SZ each class interface or enum should has own file
-// SZ same for mixins homework
+import { LinkedListNode } from './linked-list-node';
+// SZ each class interface or enum should has own file + 
+// SZ same for mixins homework + 
 
-class LinkedListNode<T>{
-
-    public prev: LinkedListNode<T>;
-    public next: LinkedListNode<T>;
-    public value: T;
-
-    constructor(value: T)
-    constructor(value: T, prev: LinkedListNode<T>, next: LinkedListNode<T>)
-    constructor(value: T, prev?: LinkedListNode<T>, next?: LinkedListNode<T>) {
-        this.value = value;
-        if (prev) {
-            this.prev = prev;
-        }
-        if (next) {
-            this.next = next;
-        }
-    }
-}
-
-class LinkedList<T> {
+export class LinkedList<T> {
     private _root: LinkedListNode<T>;
     private _tail: LinkedListNode<T>;
 
@@ -175,22 +157,3 @@ class LinkedList<T> {
         return res + ']';
     }
 }
-
-const list = new LinkedList<number>([1, 2, 3]);
-console.log(list.toString());
-list.insertFirst(0);
-console.log(list.toString());
-list.insertLast(4);
-console.log(list.toString());
-list.insertAfter(3, 3.5);
-console.log(list.toString());
-list.insertBefore(3, 2.5);
-console.log(list.toString());
-list.remove(2.5);
-list.remove(3.5);
-console.log(list.toString());
-list.removeFirst();
-console.log(list.toString());
-list.removeLast();
-console.log(list.toString());
-console.log(`Length: ${list.length()}`);
