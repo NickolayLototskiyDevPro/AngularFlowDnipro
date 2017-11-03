@@ -1,20 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { ClockContainerComponent } from './components/clock-container/clock-container.component';
-import { ShowTimeComponent } from './components/show-time/show-time.component';
-import { TimeCapsuleComponent } from './components/time-capsule/time-capsule.component';
+import { ClockModule } from './modules/clock/clock.module';
+import { TimeCapsuleModule } from './modules/time-capsule/time-capsule.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ClockContainerComponent,
-    ShowTimeComponent,
-    TimeCapsuleComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ClockModule,
+    TimeCapsuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

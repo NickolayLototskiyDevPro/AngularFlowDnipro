@@ -1,41 +1,32 @@
 import { Component, OnInit, Input, Output, OnChanges, SimpleChanges, EventEmitter } from '@angular/core';
+import { ClockService } from '../../services/clock.service';
+import { TimeCapsuleService } from '../../../time-capsule/services/time-capsule.service';
 
 @Component({
   selector: 'app-show-time',
-  template: `<h4 [class.frozen]="isFrozen">
-  {{displayValue}}
+  template: `<h4>
+  <span *ngIf="displayValue; else no_data">{{displayValue | date:'mediumTime'}}</span>
+  <ng-template #no_data>N/A</ng-template>
   </h4>
   <button (click)='rememberTime()'>Remember Time</button>`,
   styles: [
     ':host { background-color: #1976d2; color: white;}',
-    '.frozen { color: #ff7070}'
   ]
 })
-export class ShowTimeComponent implements OnInit, OnChanges {
-  constructor() { }
+export class ShowTimeComponent implements OnInit {
+  constructor(private clockService: ClockService, private capsule: TimeCapsuleService) { }
 
-  @Input()
-  public currTime: Date;
-  @Input()
-  public isFrozen = false;
+  public displayValue: Date;
 
-  public displayValue;
-
-
-  // SZ missed access modifiers +
-  @Output()
-  public onTimeRemembered: EventEmitter<Date> = new EventEmitter();
-
-  ngOnInit() {
+  public ngOnInit(): void {
+    this.clockService.timeUpdated.subscribe(this.updateTime.bind(this));
   }
 
-  public ngOnChanges(changes: SimpleChanges) {
-    if (changes.currTime && changes.currTime.currentValue) {
-      this.displayValue = changes.currTime.currentValue.toTimeString();
-    }
+  private updateTime(date: Date): void {
+    this.displayValue = date;
   }
 
-  public rememberTime() {
-    this.onTimeRemembered.emit(this.currTime);
+  public rememberTime(): void {
+    this.capsule.saveTime(this.displayValue);
   }
 }
