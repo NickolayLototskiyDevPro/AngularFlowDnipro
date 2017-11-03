@@ -9,7 +9,7 @@ export class ShowTimeComponent {
   @Input()
   public visibleTime: number;
   @Input()
-  public temporaryTime: number = 0;
+  public temporaryTime = 0;
 
   @Output()
   public rememberTime: EventEmitter<void> = new EventEmitter<void>();
@@ -17,7 +17,7 @@ export class ShowTimeComponent {
   // SZ missed access modifier
   // SZ please install tslint and setup member-access rule
   // SZ in general your homework looks good
-  rememberTimeEmit(): void {
+  public rememberTimeEmit(): void {
       this.rememberTime.emit();
   }
 
